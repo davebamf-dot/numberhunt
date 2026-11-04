@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>NumberHunt</title>
+  <meta name="description" content="A number logic puzzle: keep the right numbers, clear the rest.">
+  <meta name="theme-color" content="#14406B">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="NumberHunt">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/barlow-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="header">
+      <h1 class="wordmark" id="wordmark"><span class="wm-a">Number</span><span class="wm-b">Hunt</span></h1>
+      <div class="hearts" id="hearts" role="img" aria-label="3 lives left"></div>
+    </header>
+
+    <div class="board-area" id="boardArea">
+      <canvas id="board" aria-label="Puzzle board"></canvas>
+    </div>
+
+    <section class="controls">
+      <div class="mode" id="mode" role="group" aria-label="What a tap does">
+        <span class="mode-thumb" aria-hidden="true"></span>
+        <button type="button" data-mode="keep" aria-pressed="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>
+          Keep
+        </button>
+        <button type="button" data-mode="remove" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>
+          Remove
+        </button>
+      </div>
+      <div class="toolbar">
+        <button type="button" class="btn btn-primary" id="btnHint">Hint (2)</button>
+        <button type="button" class="btn btn-ghost" id="btnRestart">Restart</button>
+        <button type="button" class="btn btn-ghost" id="btnNew">New Puzzle</button>
+      </div>
+      <p class="tip" id="tip"></p>
+    </section>
+  </main>
+
+  <div class="scrim" id="scrim" hidden>
+    <div class="card" id="card" role="dialog" aria-modal="true" aria-labelledby="cardTitle">
+      <h2 id="cardTitle"></h2>
+      <p id="cardMessage"></p>
+      <div class="card-buttons" id="cardButtons"></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
