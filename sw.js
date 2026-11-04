@@ -1,5 +1,5 @@
 // Makes NumberHunt work offline. Change VERSION whenever any file changes, so devices pick up the update.
-const VERSION = "numberhunt-v3";
+const VERSION = "numberhunt-v4";
 const FILES = [
   "./", "./index.html", "./style.css", "./game.js", "./app.js", "./manifest.webmanifest",
   "./fonts/barlow-300.woff2", "./fonts/barlow-500.woff2", "./fonts/barlow-600.woff2", "./fonts/barlow-700.woff2",
