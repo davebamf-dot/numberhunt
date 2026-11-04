@@ -13,6 +13,7 @@
   --red: #EF4358;
   --green: #2BBF7E;
   --pad: clamp(10px, 2.6vmin, 22px);
+  --clear-status-bar: 14px;     /* iOS blurs a little beyond the status bar's reported height */
   color-scheme: dark;
 }
 
@@ -50,7 +51,7 @@ body {
   max-width: min(100%, 92vh);
   margin: 0 auto;
   padding:
-    calc(env(safe-area-inset-top) + var(--pad) * 0.7)
+    calc(env(safe-area-inset-top) + var(--pad) * 0.7 + var(--clear-status-bar))
     calc(env(safe-area-inset-right) + var(--pad))
     calc(env(safe-area-inset-bottom) + var(--pad) * 0.7)
     calc(env(safe-area-inset-left) + var(--pad));
@@ -147,6 +148,7 @@ body {
   .wordmark { font-size: clamp(24px, 3.4vw, 40px); }
 }
 @media (orientation: landscape) and (max-height: 560px) {
+  :root { --clear-status-bar: 0px; }    /* phones on their side have no status bar */
   .wordmark { font-size: 24px; }
   .heart { width: 20px; height: 20px; }
   .tip { font-size: 12px; }
